@@ -2,7 +2,7 @@
 GOWHOIS, query multiple domains at once.
 
 Based on https://github.com/likexian/whois.
-
+````
 Usage:
   -blind
         Print raw whois info even if an error during parsing occurs. (default true)
@@ -16,3 +16,4 @@ Usage:
         Number of retries if fail. (default 5)
   -threads int
         Number of threads. (default 1)
+````
