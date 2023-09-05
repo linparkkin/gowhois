@@ -96,11 +96,15 @@ func doWhois(input string, wg *sync.WaitGroup,goroutines chan int){
 					fmt.Printf("REGISTRAR: %v\n",result.Registrar.Name)
 				}
 				if result.Registrant != nil {
-					// Print the registrar name
-						fmt.Printf("REGISTRAR: %v\n",result.Registrar.Name)
 					// Print the registrant name
-						fmt.Printf("REGISTRANT: %v\n",result.Registrant.Name)
-					}
+					fmt.Printf("REGISTRANT: %v\n",result.Registrant.Name)
+					fmt.Printf("ORGANIZATION: %v\n",result.Registrant.Organization)
+					fmt.Printf("STREET: %v\n",result.Registrant.Street)
+					fmt.Printf("PROVINCE: %v\n",result.Registrant.Province)
+					fmt.Printf("COUNTRY: %v\n",result.Registrant.Country)
+					fmt.Printf("PHONE: %v\n",result.Registrant.Phone)
+					fmt.Printf("EMAIL: %v\n",result.Registrant.Email)
+				}
 				fmt.Printf("\n")
 			} else if (err!=nil && result.Domain!=nil) {
 				fmt.Printf("DOMAIN: %v\n",input)
@@ -118,11 +122,9 @@ func doWhois(input string, wg *sync.WaitGroup,goroutines chan int){
 					fmt.Printf("REGISTRAR: %v\n",result.Registrar.Name)
 				}
 				if result.Registrant != nil {
-					// Print the registrar name
-						fmt.Printf("REGISTRAR: %v\n",result.Registrar.Name)
 					// Print the registrant name
-						fmt.Printf("REGISTRANT: %v\n",result.Registrant.Name)
-					}
+					fmt.Printf("REGISTRANT: %v\n",result.Registrant.Name)
+				}
 				fmt.Printf("ERROR: %v\n\n",err)
 			} 
 		} else if (err == nil) && !*Parsed{
